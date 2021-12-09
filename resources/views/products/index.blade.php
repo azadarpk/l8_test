@@ -55,7 +55,7 @@
             <th>Details</th>
             <th >Action</th>
         </tr>
-        @foreach ($products as $product)
+        @forelse ($products as $product)
         <tr>
             <td>{{ $product->id }}</td>
             <td>{{ $product->title }}</td>
@@ -72,7 +72,12 @@
                 </form>
             </td>
         </tr>
-        @endforeach
+        @empty
+        <tr>
+            <td>Date Not found</td>
+        </tr>
+
+        @endforelse
     </table>
 
               
